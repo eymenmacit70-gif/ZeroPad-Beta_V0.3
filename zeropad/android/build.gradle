@@ -1,0 +1,11 @@
+plugins {
+    id "com.android.application" version "8.5.2" apply false
+}
+
+def zeroPadBuildRoot = new File(System.getProperty("user.home"), ".zeropad-build")
+
+layout.buildDirectory.set(new File(zeroPadBuildRoot, "root"))
+
+subprojects {
+    layout.buildDirectory.set(new File(zeroPadBuildRoot, project.name))
+}
